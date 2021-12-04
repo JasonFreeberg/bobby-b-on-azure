@@ -3,7 +3,7 @@ name: Build and deploy container to Azure
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 env:
