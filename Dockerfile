@@ -4,6 +4,7 @@ WORKDIR /
 
 COPY discord discord
 COPY utils utils
+COPY logging_config.ini utils/logging_config.ini
 
 WORKDIR /discord
 
