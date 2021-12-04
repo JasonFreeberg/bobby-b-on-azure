@@ -9,6 +9,9 @@ on:
       - master
   workflow_dispatch:
 
+env:
+  RESOURCE_GROUP: bobby-b-bot
+
 jobs:
   build:
     runs-on: 'ubuntu-latest'
@@ -53,10 +56,11 @@ jobs:
       run: |
         az container create \
           --name bobby-b-bot \
+          -g ${{ env.RESOURCE_GROUP }}
           --image ghcr.io/${{ env.REPO }}:${{ github.sha }} \
           --cpu 0.5 \
           --memory 0.5 \
-          -e "ENV=PRODUCTION TOKEN={{ secrets.token }}""
+          -e "ENV=PRODUCTION TOKEN=${{ secrets.token }}""
 
     - name: Deploy to Azure Web App
       id: deploy-to-webapp
