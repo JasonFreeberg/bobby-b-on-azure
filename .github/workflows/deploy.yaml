@@ -57,4 +57,4 @@ jobs:
           --image ghcr.io/${{ env.REPO }}:${{ github.sha }} \
           --cpu 0.5 \
           --memory 0.5 \
-          -e "ENV=PRODUCTION TOKEN=${{ secrets.token }}"
+          -e 'ENV'='PRODUCTION' 'TOKEN'='${{ secrets.token }}'
