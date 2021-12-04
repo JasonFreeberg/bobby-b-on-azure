@@ -1,0 +1,6 @@
+[submodule "discord"]
+	path = discord
+	url = https://github.com/bobby-b-bot/discord.git
+[submodule "utils"]
+	path = utils
+	url = https://github.com/bobby-b-bot/utils.git
