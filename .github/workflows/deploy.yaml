@@ -16,6 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Remove line 18 in discord.py (unnecessary file assertion)
+      run: |
+        sed -i '18d' discord/discord_bot.py
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
